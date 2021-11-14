@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+.ocuparVertical{
+  position: fixed;
+  height: 100%;
+  /*background: #262626;*/
+  background: #B49664;
+  background: #301D1C;
+}
+
+.pocisionSup{
+  z-index: 999 !important;
+}
+
+.pocisionInf{
+  z-index: 995 !important;
+}
+
+.footerColor{
+  /*background: #301D1C;*/
+  background: #B49664;
+  color: #f7f7f7;
+
+}
+.fondoColor{
+  /*background: #f7f7f7;*/
+  background: #cdb998;
+}
+.partners {
+  padding: 40px 0px;
+  /*padding: 40px 120px;*/
+}
+
+.padingRow{
+  padding-left: 100px;
+}
+
+.ps-6{
+  padding-left: 6rem !important;
+  margin-bottom: 6rem !important;
+}
+
+h1{
+  font-family: "Poppins-SemiBold";
+  font-size: 34px;
+}
+
+h3{
+  font-family: "Poppins-Bold";
+  font-size: 20px;
+}
+
+h5{
+  font-family: "Poppins-SemiBold";
+  font-size: 18px;
+}
+
+.sugerencia{
+  font-family: "Poppins-Regular";
+  font-size: 14.4px;
+  color: #757575;
+}
+
+.tabla{
+  width: 90%;
+  height: 10px;
+  margin-left: 50px;
+}
