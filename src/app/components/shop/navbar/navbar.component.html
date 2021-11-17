@@ -1,4 +1,3 @@
-<!--ADMIN sideNav -->
 <div class="d-flex align-items-start ocuparVertical pocisionSup">
   <nav class="navbar navbar-expand-xxl navbar-dark border-3">
     <div class="container-fluid">
@@ -8,31 +7,20 @@
       </button>
       <div id="MenuIzquierdo" class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <hr style="color: white">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]='["login"]'>Admin</a>
-          </li>
-          <hr style="color: white">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" [routerLink]='["dashBoard"]'>Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["offers"]'>Admin User <br> Management</a>
+            <a class="nav-link" [routerLink]='["offers"]'>Offers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["payoutDetails"]'>Roles Management</a>
+            <a class="nav-link" [routerLink]='["payoutDetails"]'>Payout Details</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["category"]'>Driver Management</a>
+            <a class="nav-link" [routerLink]='["category"]'>Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["dateTime"]'>Category Management</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]='["dateTime"]'>Store Management</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]='["dateTime"]'>Manage Orders</a>
+            <a class="nav-link" [routerLink]='["dateTime"]'>Date & Time</a>
           </li>
         </ul>
       </div>
@@ -43,7 +31,7 @@
 <nav class="navbar navbar-expand navbar-light bg-white sticky-top Small shadow-sm p-3 pocisionInf altoNav">
   <div class="container-fluid">
     <div>
-      <img class="img-fluid ms-4 sizeImg" src="assets/logo/1.png" alt="">
+      <img class="img-fluid ms-4 sizeImg" src="../../../../assets/logo/1.png" alt="">
       <!--      <a class="navbar-brand" href="#">Alcohol</a>-->
     </div>
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -61,3 +49,4 @@
   </div>
 </nav>
 
+<router-outlet></router-outlet>

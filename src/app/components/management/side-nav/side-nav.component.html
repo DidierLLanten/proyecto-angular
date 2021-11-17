@@ -1,3 +1,4 @@
+<!--ADMIN sideNav -->
 <div class="d-flex align-items-start ocuparVertical pocisionSup">
   <nav class="navbar navbar-expand-xxl navbar-dark border-3">
     <div class="container-fluid">
@@ -7,20 +8,34 @@
       </button>
       <div id="MenuIzquierdo" class="collapse navbar-collapse">
         <ul class="navbar-nav">
+          <hr style="color: white">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]='["login"]'>Admin</a>
+          </li>
+          <hr style="color: white">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" [routerLink]='["dashBoard"]'>Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["offers"]'>Offers</a>
+            <a class="nav-link" [routerLink]='["workers"]'>Admin User <br> Management</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["payoutDetails"]'>Payout Details</a>
+            <a class="nav-link" [routerLink]='["roles"]'>Roles Management</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["category"]'>Category</a>
+            <a class="nav-link" [routerLink]='["drivers"]'>Driver Management</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]='["dateTime"]'>Date & Time</a>
+            <a class="nav-link" [routerLink]='["consumers"]'>User Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["categoryProduct"]'>Category Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["stores"]'>Store Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='[""]'>Manage Orders</a>
           </li>
         </ul>
       </div>
@@ -31,8 +46,8 @@
 <nav class="navbar navbar-expand navbar-light bg-white sticky-top Small shadow-sm p-3 pocisionInf altoNav">
   <div class="container-fluid">
     <div>
-      <img class="img-fluid ms-4 sizeImg" src="assets/logo/1.png" alt="">
-<!--      <a class="navbar-brand" href="#">Alcohol</a>-->
+      <img class="img-fluid ms-4 sizeImg" src="../../../../assets/logo/1.png" alt="">
+      <!--      <a class="navbar-brand" href="#">Alcohol</a>-->
     </div>
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -48,3 +63,5 @@
 
   </div>
 </nav>
+<router-outlet></router-outlet>
+
