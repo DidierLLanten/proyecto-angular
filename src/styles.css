@@ -64,3 +64,7 @@ h5{
   height: 10px;
   margin-left: 50px;
 }
+
+.ocuparScreen{
+  height: 100vmin;
+}

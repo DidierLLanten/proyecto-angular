@@ -31,13 +31,13 @@ const APP_ROUTES: Routes = [
     path: "admin", component: SideNavComponent, children:
       [
         {path: "login", component: LoginComponent},
-        {path: "workers", component: WorkersSupportComponent},
+        {path: "admin_users", component: WorkersSupportComponent},
         {path: "roles", component: RolesComponent},
         {path: "consumers", component: ConsumersComponent},
         {path: "drivers", component: DriversComponent},
         {path: "categoryProduct", component: CategoryProductComponent},
         {path: "stores", component: StoresComponent},
-        {path: "**", pathMatch: "full", redirectTo: "workers"}
+        {path: "**", pathMatch: "full", redirectTo: "admin_users"}
       ]
   },
   {path: "**", pathMatch: "full", redirectTo: "shop"}

@@ -22,6 +22,7 @@ import { ConsumersComponent } from './components/management/consumers/consumers.
 import { DriversComponent } from './components/management/drivers/drivers.component';
 import { CategoryProductComponent } from './components/management/category-product/category-product.component';
 import { StoresComponent } from './components/management/stores/stores.component';
+import {FooterComponent} from "./components/compartido/Footer/footer";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { StoresComponent } from './components/management/stores/stores.component
     CategoryComponent,
     DateTimeComponent,
     LoginComponent,
+    FooterComponent,
     SideNavComponent,
     WorkersSupportComponent,
     RolesComponent,
