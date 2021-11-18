@@ -23,6 +23,7 @@ import { DriversComponent } from './components/management/drivers/drivers.compon
 import { CategoryProductComponent } from './components/management/category-product/category-product.component';
 import { StoresComponent } from './components/management/stores/stores.component';
 import {FooterComponent} from "./components/compartido/Footer/footer";
+import { HomeComponent } from './components/User/home/home.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {FooterComponent} from "./components/compartido/Footer/footer";
     ConsumersComponent,
     DriversComponent,
     CategoryProductComponent,
-    StoresComponent
+    StoresComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

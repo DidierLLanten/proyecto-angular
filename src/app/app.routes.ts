@@ -14,6 +14,8 @@ import {ConsumersComponent} from "./components/management/consumers/consumers.co
 import {DriversComponent} from "./components/management/drivers/drivers.component";
 import {CategoryProductComponent} from "./components/management/category-product/category-product.component";
 import {StoresComponent} from "./components/management/stores/stores.component";
+import {HomeComponent} from "./components/User/home/home.component";
+
 
 const APP_ROUTES: Routes = [
   {
@@ -40,7 +42,11 @@ const APP_ROUTES: Routes = [
         {path: "**", pathMatch: "full", redirectTo: "admin_users"}
       ]
   },
-  {path: "**", pathMatch: "full", redirectTo: "shop"}
+  {
+    path: "home", component: HomeComponent, children:
+      []
+  },
+  {path: "**", pathMatch: "full", redirectTo: "home"}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
