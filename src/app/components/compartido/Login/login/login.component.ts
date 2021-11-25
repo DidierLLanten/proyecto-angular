@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
 
   viewDomicilio(){}
 
-  viewRegistar(){}
-
+  viewEleccionRegisto(){
+    this.router.navigateByUrl('/eleccion-registro')
+  }
 
 }

@@ -5,7 +5,7 @@ import {PayoutDetailsComponent} from "./components/shop/payout-details/payout-de
 import {CategoryComponent} from "./components/shop/category/category.component";
 import {DateTimeComponent} from "./components/shop/date-time/date-time.component";
 
-import {LoginComponent} from "./components/compartido/login/login.component";
+import {LoginComponent} from "./components/compartido/Login/login/login.component";
 import {SideNavComponent} from "./components/management/side-nav/side-nav.component";
 import {NavbarComponent} from "./components/shop/navbar/navbar.component";
 import {WorkersSupportComponent} from "./components/management/workers-support/workers-support.component";
@@ -15,6 +15,10 @@ import {DriversComponent} from "./components/management/drivers/drivers.componen
 import {CategoryProductComponent} from "./components/management/category-product/category-product.component";
 import {StoresComponent} from "./components/management/stores/stores.component";
 import {HomeComponent} from "./components/User/home/home.component";
+import {RegistroComponent} from "./components/compartido/Login/registro/registro-user/registro.component";
+import {EleccionRegistroComponent} from "./components/compartido/Login/eleccionRegistro/eleccion-registro";
+import {RegistroDeliveryComponent} from "./components/compartido/Login/registro/registro-delivery/registro-delivery.component";
+import {RegistroTiendaComponent} from "./components/compartido/Login/registro/registro-tienda/registro-tienda.component";
 
 
 const APP_ROUTES: Routes = [
@@ -32,7 +36,14 @@ const APP_ROUTES: Routes = [
   {
     path: "admin", component: SideNavComponent, children:
       [
-        {path: "login", component: LoginComponent},
+        {
+          path: "eleccion-registro", component: EleccionRegistroComponent, children:
+            [
+              {path: "registroConsumer", component: RegistroComponent},
+              {path: "registroDelivery", component: RegistroDeliveryComponent},
+              {path: "registroTienda", component: RegistroTiendaComponent},
+            ]
+        },
         {path: "admin_users", component: WorkersSupportComponent},
         {path: "roles", component: RolesComponent},
         {path: "consumers", component: ConsumersComponent},
@@ -44,9 +55,25 @@ const APP_ROUTES: Routes = [
   },
   {
     path: "home", component: HomeComponent, children:
-      []
+      [
+        {path: "login", component: LoginComponent},
+        // {path: "eleccion-registro", component: EleccionRegistroComponent, children:
+        //     [
+        //       {path: "registroConsumer", component: RegistroComponent},
+        //     ]
+        // },
+      ]
   },
-  {path: "**", pathMatch: "full", redirectTo: "home"}
+  {
+    path: "eleccion-registro", component: EleccionRegistroComponent, children:
+    [
+      {path: "registroConsumer", component: RegistroComponent},
+      {path: "registroDelivery", component: RegistroDeliveryComponent},
+      {path: "registroTienda", component: RegistroTiendaComponent},
+    ]
+  },
+  {path: "login", component: LoginComponent},
+  {path: "**", pathMatch: "full", redirectTo: "admin"}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

@@ -1,0 +1,145 @@
+<div class="container p-5">
+  <h1>Crea tu cuenta</h1>
+  <hr>
+  <form action="" (ngSubmit)="guardarUsuario(f)" #f="ngForm">
+    <div>
+      <div class="form-group row">
+        <label for="nombre" class="col-1 col-form-label">Nombres</label>
+        <div class="col-8">
+          <input id="nombre" type="text" class="form-control" placeholder="Nombre" name="nombre"
+                 required="required"
+                 pattern="[aA-zZ ]{3,}"
+                 [(ngModel)]="usuario.nombre"
+                 [class.is-invalid]="nombre.invalid && nombre.touched"
+                 [class.is-valid]="nombre.valid"
+                 #nombre="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="nombre.invalid && nombre.touched">El nombre debe tener minimo tres letras</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="apellido" class="col-1 col-form-label">Apellidos</label>
+        <div class="col-8">
+          <input id="apellido" type="text" class="form-control" placeholder="Apellido" name="apellido"
+                 required="required"
+                 pattern="[aA-zZ]{3,}"
+                 [(ngModel)]="usuario.apellido"
+                 [class.is-invalid]="apellido.invalid && apellido.touched"
+                 [class.is-valid]="apellido.valid"
+                 #apellido="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="apellido.invalid && apellido.touched">El apellido debe tener minimo tres letras</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="edad" class="col-1 col-form-label">Edad</label>
+        <div class="col-8">
+          <input id="edad" type="number" class="form-control" placeholder="Edad" name="edad"
+                 required="required"
+                 min="18"
+                 max="80"
+                 [(ngModel)]="usuario.edad"
+                 [class.is-invalid]="edad.invalid && edad.touched"
+                 [class.is-valid]="edad.valid"
+                 #edad="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf='(edad.value==null || edad.value) == 0 && edad.touched'>La edad es requerida</small>
+          <small class="form-text text-danger" *ngIf="edad.value>0 && edad.value<18 && edad.touched">Debe ser mayor de edad</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="cedula" class="col-1 col-form-label">Cédula</label>
+        <div class="col-8">
+          <input id="cedula" type="number" class="form-control" placeholder="Cédula" name="ced"
+                 required="required"
+                 min="10000"
+                 [(ngModel)]="usuario.cedula"
+                 [class.is-invalid]="ced.invalid && ced.touched"
+                 [class.is-valid]="ced.valid"
+                 #ced="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="ced.invalid && ced.touched">La cédula debe tener minimo cinco numeros</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-1 col-form-label">Correo</label>
+        <div class="col-8">
+          <input id="email" type="email" class="form-control" placeholder="Correo Electronico" name="email"
+                 required="required"
+                 [(ngModel)]="usuario.correo"
+                 [class.is-invalid]="email.invalid && email.touched"
+                 [class.is-valid]="email.valid"
+                 #email="ngModel"
+                 pattern="[a-z0-9._+%&$-]+@(gmail|outlook|yahoo|hotmail)+\.+(es|com)$"
+          >
+          <small class="form-text text-danger" *ngIf="email.invalid && email.touched">El formato del correo electronico no es valido</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="direccion" class="col-1 col-form-label">Direccion</label>
+        <div class="col-8">
+          <input id="direccion" type="text" class="form-control" placeholder="Direccion" name="direccion"
+                 required="required"
+                 minlength="3"
+                 [(ngModel)]="usuario.direccion"
+                 [class.is-invalid]="direccion.invalid && direccion.touched"
+                 [class.is-valid]="direccion.valid"
+                 #direccion="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="direccion.invalid && direccion.touched">Debe ingresar una direccion</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-1 col-form-label">Contraseña</label>
+        <div class="col-8">
+          <input id="password" type="password" class="form-control" placeholder="Contraseña" name="contra"
+                 required="required"
+                 minlength="6"
+                 [(ngModel)]="usuario.contrasena"
+                 [class.is-invalid]="contra.invalid && contra.touched"
+                 [class.is-valid]="contra.valid"
+                 #contra="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="contra.invalid && contra.touched">La contraseña debe tener minimo seis caracteres</small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="foto" class="col-1 col-form-label">Foto</label>
+        <div class="col-8">
+          <input id="foto" type="text" class="form-control" placeholder="Foto de perfil" name="foto"
+                 [(ngModel)]="usuario.photo"
+                 #foto="ngModel"
+          >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="rol" class="col-1 col-form-label">Rol</label>
+        <div class="col-8">
+          <input id="rol" type="text" class="form-control" placeholder="Rol" name="rol"
+                 required="required"
+                 [(ngModel)]="usuario.rol"
+                 [class.is-invalid]="rol.invalid && rol.touched"
+                 [class.is-valid]="rol.valid"
+                 #rol="ngModel"
+          >
+          <small class="form-text text-danger" *ngIf="direccion.invalid && direccion.touched">Debe ingresar un Rol</small>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center col-9 mt-3">
+
+        <div class="col-2 ">
+          <button type="submit" class="form-control btn-dark" name="cancelar" (click)="viewUser()">Volver</button>
+        </div>
+        <div class="col-2 ">
+          <button type="submit" class="form-control btn-outline-secondary" name="crear">Crear</button>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+
+</div>
